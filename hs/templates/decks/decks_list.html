@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>deck list</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+</head>
+<body>
+{% for deck in decks.all %}
+<div class="container3">
+<div class="picture">
+    <img src="{{ deck.image.url }}" alt="колода">
+</div>
+    <div class="info">
+        <p3>Класс : {{ deck.review.name }}</p3><br>
+        <p3>Архетип : {{ deck.archetype }}</p3><br>
+        <p3>Статистика : {{ deck.archetype.winrate }}% процента побед</p3><br>
+        <p3>Лучший противник : {{ deck.archetype.best_matchup }}</p3><br>
+        <p3>Худший противник : {{ deck.archetype.worst_matchup }}</p3><br>
+        <p3>Тир колоды : {{ deck.deck_tier }}</p3><br>
+        <p3>Игрок : {{ deck.player.player_nickname }}</p3><br>
+{#        {% for prize in deck.player.prizes %}#}
+{#            <p3>Награды : {{ deck.player.prizes }}</p3><br>#}
+{#        {% endfor %}#}
+        <p4>Имя игрока : {{ deck.player.name }}</p4><br>
+        <p4>Ранг игрока : {{ deck.player.rank }}</p4><br><br><br><br>
+        <textarea class="comment" name="review" id="" cols="30" rows="10" readonly>
+            Оценка: {{ deck.review.rating }}
+            {{ deck.review.comment }}
+        </textarea>
+        <div  style="margin-top: 20px">
+            {% if user.is_authenticated %}
+                <a style="text-decoration: none; color: white; font-size: 20px" href="{% url 'update_deck' deck.id %}">Update</a>
+                <a style="text-decoration: none; color: white; font-size: 20px" href="{% url 'delete_deck' deck.id %}">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="video">
+        <iframe width="700" height="500" src="{{ deck.url }}" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>
+

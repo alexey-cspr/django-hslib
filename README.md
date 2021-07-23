@@ -1,1 +1,1 @@
-# django-hslib
+# hearthstone decks lib 

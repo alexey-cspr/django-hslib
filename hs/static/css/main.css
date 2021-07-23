@@ -1,0 +1,105 @@
+body {
+    font-family: Arial;
+    color: white;
+    background: #c7b39b url("back4.jpg");
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.registration{
+    position: relative;
+    font-size: 20px;
+    height: 100px;
+    width: 100px;
+    z-index: 2;
+    left: 47%;
+    /*background-color: red;*/
+}
+
+.registration button{
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.left {
+    left: 0;
+    /*background-color: #111;*/
+}
+
+.right {
+    right: 0;
+    /*background-color: red;*/
+}
+
+.centered {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered2{
+    position: relative;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.centered3{
+    position: relative;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.centered4{
+    position: relative;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.centered5{
+    position: relative;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.centered4 img {
+    width: 200px;
+    height:120px;
+    border-radius: 25%;
+}
+.centered3 img {
+    width: 200px;
+    height:120px;
+    border-radius: 25%;
+}
+
+.centered5 img {
+    width: 200px;
+    height:120px;
+    border-radius: 25%;
+}
+
+.centered2 img {
+    width: 200px;
+    height:120px;
+    border-radius: 25%;
+}
+.centered img {
+    width: 200px;
+    height:120px;
+    border-radius: 25%;
+}

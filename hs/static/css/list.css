@@ -1,0 +1,58 @@
+body{
+    font-family: Verdana;
+    color: oldlace;
+    margin: 0px ;
+    background: #c7b39b url("back8.jpg");
+    background-attachment: fixed;
+}
+
+.container3{
+    width: 100%;
+    height: 950px;
+    float: left;
+    /*background: #c7b39b url("back6.jpg");*/
+    /*margin-bottom: 1px;*/
+    border-bottom: 1px solid white;
+    /*background-color: aqua;*/
+    /*border: 1px solid white;*/
+    /*z-index: 1;*/
+}
+.picture{
+    float: left;
+    width: 20%;
+    color: red;
+    height: 200px;
+}
+.info p3{
+    font-size: 25px;
+}
+.info{
+    float: left;
+    width: 25%;
+}
+.video{
+    float: left;
+    width: 33%;
+    height: 400px;
+    /*background-color: red;*/
+}
+.video{
+    margin-top: 200px;
+    margin-left: 200px;
+}
+.comment{
+    width: 400px;
+    height: 400px;
+}
+.info textarea{
+    width: 400px;
+    height: 400px;
+    background-color: #2b535b;
+}
+.deck_img{
+    height: 700px;
+    width: 150px;
+}
+.crud{
+    padding: 50px;
+}

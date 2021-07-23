@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>main</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+{#    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="all">#}
+    <!--// Style-CSS -->
+    <!-- font-awesome-icons -->
+{#    <link href="{% static 'css/main.css' %}" rel="stylesheet">#}
+    <!-- //font-awesome-icons -->
+  <!-- /Fonts -->
+{#    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700" rel="stylesheet">#}
+{#    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">#}
+    <!-- //Fonts -->
+</head>
+<body>
+<div class="registration" style="width: 100px">
+    {% if not user.is_authenticated %}
+    <p><a href="accounts/login/"><p3 style="color: white">login</p3></a>
+    <a href="{% url 'signup' %}"><p3 style="color: white">signup</p3></a><br>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><p3 style="color: white">logout</p3></a><br>
+        <a href="{% url 'new_deck' %}"><p3 style="color: white">add deck</p3></a></p>
+    {% endif %}
+</div>
+<div class="split left">
+  <div class="centered">
+      <a href="decks_list/Hunt"><img src="media/deck_picture/hunt.jpeg" alt=""></a>
+    <h2>ОХОТНИК</h2>
+  </div>
+    <div class="centered2">
+        <a href="decks_list/Druid"><img src="media/deck_picture/druidjpg.jpg" alt=""></a>
+    <h2>ДРУИД</h2>
+  </div>
+    <div class="centered3">
+        <a href="decks_list/Mage"><img src="media/deck_picture/mage.jpeg" alt=""></a>
+    <h2>МАГ</h2>
+  </div>
+    <div class="centered4">
+        <a href="decks_list/Priest"><img src="media/deck_picture/priest.jpg" alt=""></a>
+    <h2>ЖРЕЦ</h2>
+  </div>
+    <div class="centered5">
+        <a href="decks_list/Demonhunter"><img src="media/deck_picture/demonhunter.jpg" alt=""></a>
+    <h2>ОХОТНИК НА ДЕМОНОВ</h2>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+      <a href="decks_list/Rogue"><img src="media/deck_picture/rogue.jpg" alt=""></a>
+    <h2>РАЗБОЙНИК</h2>
+  </div>
+    <div class="centered2">
+        <a href="decks_list/Paladin"><img src="media/deck_picture/paladin.jpg" alt=""></a>
+    <h2>ПАЛАДИН</h2>
+  </div>
+    <div class="centered3">
+        <a href="decks_list/Warlock"><img src="media/deck_picture/warlock.jpeg" alt=""></a>
+    <h2>ЧЕРНОКНИЖНИК</h2>
+  </div>
+    <div class="centered4">
+        <a href="decks_list/War"><img src="media/deck_picture/war.jpg" alt=""></a>
+    <h2>ВОИН</h2>
+  </div>
+    <div class="centered5">
+        <a href="decks_list/Shaman"> <img src="media/deck_picture/shaman.jpg" alt=""></a>
+    <h2>ШАМАН</h2>
+  </div>
+</div>
+</body>
+</html>

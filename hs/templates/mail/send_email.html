@@ -1,0 +1,53 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+<div style="margin-left: 20% " class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">Send email</h1>
+          <hr class="mt-0 mb-4">
+            <form method="post" action="{% url 'email_act' %}">
+    {% csrf_token %}
+    <div>
+        <div>
+            <p>{{ form.users.errors }}</p>
+            <p>{{ form.users.label_tag }}</p>
+            <p>
+                {% for user in form.users.initial %}
+                    {{ user.email }}{% if not forloop.last %},&nbsp;{% endif %}
+                {% endfor %}
+            </p>
+            <select name="users" multiple style="display: none">
+                {% for user in form.users.initial %}
+                    <option value="{{ user.id }}" selected>{{ user }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <p>{{ form.subject.errors }}</p>
+            <p>{{ form.subject.label_tag }}</p>
+            <p>{{ form.subject }}</p>
+        </div>
+        <div>
+            <p>{{ form.message.errors }}</p>
+            <p>{{ form.message.label_tag }}</p>
+            <p>{{ form.message }}</p>
+        </div>
+        <input type="hidden" name="action" value="send_email"/>
+{#        <input type="submit" name="send" value="{% trans 'Send message' %}"/>#}
+    <button type="submit" class="btn btn-success" name="send" value="{% trans 'Send message' %}">Send message</button>
+    </div>
+</form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

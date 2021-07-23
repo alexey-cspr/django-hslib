@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Delete</title>
+</head>
+<body>
+<div style="padding-left:10px ; margin-left: 40%; margin-top: 20%; margin-right: 40%" >
+<h3>Are you sure you want to delete "{{item}}"?</h3>
+    <form action="{% url 'delete_deck' item.id  %}" method="POST">
+
+        {% csrf_token %}
+        <a style="padding-right: 20px" class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+
+        <input class="btn btn-danger" type="submit" name="Confirm">
+
+    </form>
+</div>
+</body>
+</html>
